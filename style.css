@@ -1,0 +1,270 @@
+/* Importação da fonte FuturaPTHeavy */
+@font-face {
+    font-family: 'FuturaPTHeavy';
+    src: url('../assets/fonts/FuturaPTHeavy.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Importação da fonte FuturaPTLight */
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../assets/fonts/FuturaPTLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplicando a fonte FuturaPTLight ao corpo do documento */
+body {
+    font-family: 'FuturaPT', sans-serif;
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/* Estilos para as seções parallax */
+.parallax {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para a seção com altura reduzida e fundo branco */
+.parallax.short-parallax {
+    height: 5%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/images/mesa.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Ajuste do padding para a seção reduzida */
+.parallax.short-parallax .content {
+    padding: 10px;
+}
+
+.parallax:nth-child(4) {
+    background-image: url('../assets/images/FUNDO PRETO.png');
+}
+
+.parallax:nth-child(4) .content {
+    margin-top: 2em; /* Ajuste este valor conforme necessário */
+}
+
+.parallax:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/BACKGROUND preto.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+    z-index: -1;
+}
+
+/* Efeito parallax para a imagem "FUNDO PRETO.png" */
+.parallax:nth-child(2),
+.parallax:nth-child(4) {
+    background-image: url('../assets/images/FUNDO PRETO.png');
+}
+
+/* Efeito parallax para a imagem "mesa EDIT.png" */
+.parallax:nth-child(3) {
+    background-image: url('../assets/images/mesa EDIT.png');
+}
+
+.parallax:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/mesa EDIT.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transform: translateY(0) scale(1); /* Adicionado scale inicial */
+    transition: transform 0.5s ease-out;
+    z-index: -1;
+}
+
+/* Efeito de movimento ao rolar a página */
+.parallax:nth-child(1)::before,
+.parallax:nth-child(3)::before {
+    transform: translateY(calc(var(--scroll) * -0.5)) scale(calc(1 + (var(--scroll) * 0.005))); /* Zoom exagerado */
+}
+
+/* Estilos para o conteúdo dentro das seções parallax */
+.content {
+    color: #f6f6f6;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.content h1 {
+    font-family: 'FuturaPTHeavy', sans-serif; /* Usando a fonte FuturaPTHeavy */
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-weight: normal;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreamento interno */
+}
+
+.content h2 {
+    font-family: 'FuturaPT', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    font-weight: lighter;
+    margin-top: 20px;
+}
+
+.content p {
+    font-family: 'FuturaPT', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+/* Estilos para a seção "POWERED BY ISDJ" */
+.parallax:nth-child(5) {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax:nth-child(5) .content {
+    text-align: center;
+}
+
+.parallax:nth-child(5) .content p {
+    margin: 0;
+}
+
+/* Estilos para os links de contato */
+.content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.content ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.content ul li a {
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+.powered-by {
+    color: red;
+    font-size: 1rem; /* Ajuste este valor conforme necessário */
+}
+
+.isdj {
+    color: black;
+    font-size: 1rem; /* Ajuste este valor conforme necessário */
+}
+/* ... outros estilos ... */
+
+.parallax:nth-child(1) {
+    position: relative; /* Adicionado para posicionamento absoluto da navbar */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: transparent; /* Fundo transparente */
+    color: #fff; /* Texto branco */
+    padding: 20px 0;
+    position: absolute; /* Posicionamento absoluto dentro da primeira seção */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que a navbar fique acima do conteúdo */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Largura máxima da navbar */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'FuturaPT', sans-serif; /* Usando a fonte FuturaPT */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'FuturaPT', sans-serif; /* Usando a fonte FuturaPT */
+}
+/* ... outros estilos ... */
+
+.content-page {
+    max-width: 800px;
+    margin: 100px auto
+
+/* Importação da fonte FuturaPTHeavy */
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../assets/fonts/FuturaPTHeavy.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'FuturaPT', sans-serif;
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/* Estilos para o título "Igor Souza de Jesus" */
+#main-title {
+    font-family: 'FuturaPT', sans-serif; /* Usando a fonte FuturaPTHeavy */
+    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 6rem);
+    text-shadow: 8px 8px 50px rgba(0, 0, 0, 1); /* Efeito drop-shadow acentuado */
+}
+
+/* Restante do código CSS */

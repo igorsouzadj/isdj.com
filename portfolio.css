@@ -1,0 +1,66 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'FuturaPT', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills div {
+    width: 30%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.header, .footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery-title, .home-link {
+    display: inline-block;
+}
+
+.gallery-title a, .home-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+}
+
+/* Ajustando a margem para aproximar os links dos textos */
+.header {
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+}

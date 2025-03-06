@@ -1,0 +1,108 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'FuturaPT', sans-serif;
+    margin: 0;
+}
+
+.header, .footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery-title, .home-link {
+    display: inline-block;
+}
+
+.gallery-title a, .home-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: #fff;
+    font-size: 1.2em;
+    animation: scrollIndicator 1.5s infinite ease-in-out;
+}
+
+@keyframes scrollIndicator {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(10px);
+    }
+}
+
+.gallery-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto; /* Reduz a margem superior para aproximar o título */
+    overflow-y: auto;
+    height: 500px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+}
+
+.gallery-image.blurred {
+    filter: blur(5px);
+}
+
+.gallery-image.parallax {
+    transform: translateY(calc(var(--scroll) * 0.5));
+}
+
+.scroll-icons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.scroll-icons span {
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.footer {
+    padding-top: 0; /* Remove o padding superior para aproximar o footer */
+}

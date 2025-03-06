@@ -1,0 +1,96 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'FuturaPT', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para header e footer */
+.header, .footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery-title, .home-link {
+    display: inline-block;
+}
+
+.gallery-title a, .home-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+}
+
+/* Ajustando a margem para aproximar os links dos textos */
+.header {
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+}
